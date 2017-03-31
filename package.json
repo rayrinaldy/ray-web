@@ -4,7 +4,7 @@
   "description": "Ray Personal Website & Portfolio",
   "main": "server.js",
   "scripts": {
-    // "postinstall": "grunt build",
+    "postinstall": "grunt build",
     "start": "node server.js"
   },
   "keywords": [
