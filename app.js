@@ -9,9 +9,14 @@ app.use(express.static('public'));
 
 app.get('/', function(req, res){
 	res.render('index');
+  	res.sendFile(path.join(__dirname+'/public/index.html'));
+});
+
+app.get('/',function(req,res){
+  //__dirname : It will resolve to your project folder.
 });
 
 app.listen(3000, function(){
-	console.log('Connected to port 5000');
+	console.log('Connected to port 3000');
 });
 

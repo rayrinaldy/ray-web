@@ -79,6 +79,6 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['express:dev', 'pug', 'sass', 'watch']);
-    grunt.registerTask('build', ['pug', 'sass']);
+    grunt.registerTask('build', ['pug', 'sass', 'express:dev']);
 
 }
