@@ -45,7 +45,7 @@ module.exports = function(grunt) {
             },
             dev:{
                 options: {
-                    script: './app.js',
+                    script: './server.js',
                     background: true,
                 }
             }
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
                 },
             },
             express: {
-                files: ['./app.js'],
+                files: ['./server.js'],
                 tasks: ['express:dev'],
                 options: {
                     event: ['changed'],
