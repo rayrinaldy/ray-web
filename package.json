@@ -28,6 +28,7 @@
   "dependencies": {
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-cssmin": "^2.0.0",
     "grunt-contrib-uglify": "^2.2.1",
     "grunt-express-server": "^0.5.3",
     "load-grunt-tasks": "^3.5.2"
