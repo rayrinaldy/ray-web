@@ -1,5 +1,5 @@
 var config = {
-	deploy: false
+	deploy: true
 };
 
 module.exports = config;
