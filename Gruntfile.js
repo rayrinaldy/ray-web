@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     require('jit-grunt')(grunt, {
-        express : 'grunt-express-server'
+        express : 'grunt-express-server',
+        cssmin : 'grunt-contrib-cssmin'
     });
 
     grunt.initConfig({
