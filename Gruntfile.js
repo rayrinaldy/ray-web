@@ -6,20 +6,20 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        // pug: {
-        //     compile: {
-        //         options: {
-        //             pretty: true,
-        //         },
-        //         files: [{
-        //             expand: true,
-        //             cwd: 'app/pug/',
-        //             src: ['*.pug'],
-        //             dest: 'public',
-        //             ext: '.html',
-        //         }]
-        //     }
-        // },
+        pug: {
+            compile: {
+                options: {
+                    pretty: true,
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'app/pug/',
+                    src: ['*.pug'],
+                    dest: 'public',
+                    ext: '.html',
+                }]
+            }
+        },
         sass: {
             dist: {
                 files: [{
@@ -105,5 +105,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['express:dev', 'sass', 'watch']);
     grunt.registerTask('build', ['uglify:build', 'cssmin:build']);
+    grunt.registerTask('html', ['pug']);
 
 }
