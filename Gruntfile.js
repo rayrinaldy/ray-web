@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
-    require('jit-grunt')(grunt, {
-        express : 'grunt-express-server',
-        cssmin : 'grunt-contrib-cssmin'
-    });
+    // require('jit-grunt')(grunt, {
+    //     express : 'grunt-express-server',
+    //     cssmin : 'grunt-contrib-cssmin'
+    // });
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -100,6 +100,8 @@ module.exports = function(grunt) {
             },
         },
     });
+
+    require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('default', ['express:dev', 'sass', 'watch']);
     grunt.registerTask('build', ['uglify:build', 'cssmin:build']);
