@@ -2,10 +2,10 @@
   "name": "ray-website",
   "version": "1.0.0",
   "description": "Ray Personal Website & Portfolio",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "postinstall": "grunt build",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "keywords": [
     "Ray",
@@ -18,7 +18,9 @@
   "devDependencies": {
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.0.0",
     "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-uglify": "^2.2.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.0.0",
     "jit-grunt": "^0.10.0"

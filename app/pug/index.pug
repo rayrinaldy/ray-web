@@ -29,9 +29,9 @@ html.no-js(lang='en')
 		meta(property='og:url', content='http://www.rayrinaldy.com/')
 		meta(property='og:image', content='https://rayrinaldy.github.io/ray-website/images/1.jpg')
 		meta(property='og:description', content='Personal Resume & Portfolio about Ray Rinaldy')
-		meta(property='og:site_name', content='Site Name, i.e. Moz')
-		meta(property='article:published_time', content='2013-09-17T05:59:00+01:00')
-		meta(property='article:modified_time', content='2013-09-16T19:08:47+01:00')
+		meta(property='og:site_name', content='Personal Resume & Portfolio about Ray Rinaldy')
+		meta(property='article:published_time', content='2017-01-04T05:59:00+08:00')
+		meta(property='article:modified_time', content='2017-01-04T19:08:47+08:00')
 		meta(property='article:section', content='Article Section')
 		meta(property='article:tag', content='Article Tag')
 		meta(property='fb:admins', content='1605949105')
@@ -41,10 +41,13 @@ html.no-js(lang='en')
 		link(rel='shortcut icon', href='images/favicon.ico')
 		title Ray Resume &amp; Portfolio
 
-		link(rel='stylesheet', type='text/css', media='screen', href='css/bootstrap.css')
-		link(rel='stylesheet', type='text/css', href='css/font-awesome.css')
-		link(rel='stylesheet', type='text/css', href='css/jInvertScroll.css')
-		link(rel='stylesheet', type='text/css', media='screen', href='css/style.css')
+		if config.deploy
+			link(rel='stylesheet', type='text/css', media='screen', href='css/style.min.css')
+		else
+			link(rel='stylesheet', type='text/css', media='screen', href='css/bootstrap.css')
+			link(rel='stylesheet', type='text/css', href='css/font-awesome.css')
+			link(rel='stylesheet', type='text/css', href='css/jInvertScroll.css')
+			link(rel='stylesheet', type='text/css', media='screen', href='css/style.css')
 
 		link(href='https://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext', rel='stylesheet', type='text/css')
 		link(href='https://fonts.googleapis.com/css?family=Mr+De+Haviland', rel='stylesheet', type='text/css')
@@ -178,9 +181,13 @@ html.no-js(lang='en')
 
 		
 		script(src='https://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')
-		script(src="js/bootstrap.min.js")
-		script(src="js/jquery.jInvertScroll.js")
-		script(src="js/script.js")
+		
+		if config.deploy
+			script(src="js/script.min.js")
+		else
+			script(src="js/jquery.jInvertScroll.js")
+			script(src="js/bootstrap.min.js")
+			script(src="js/script.js")
 
 
 			

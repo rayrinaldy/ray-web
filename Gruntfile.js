@@ -5,20 +5,20 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        pug: {
-            compile: {
-                options: {
-                    pretty: true,
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'app/pug/',
-                    src: ['*.pug'],
-                    dest: 'public',
-                    ext: '.html',
-                }]
-            }
-        },
+        // pug: {
+        //     compile: {
+        //         options: {
+        //             pretty: true,
+        //         },
+        //         files: [{
+        //             expand: true,
+        //             cwd: 'app/pug/',
+        //             src: ['*.pug'],
+        //             dest: 'public',
+        //             ext: '.html',
+        //         }]
+        //     }
+        // },
         sass: {
             dist: {
                 files: [{
@@ -28,6 +28,28 @@ module.exports = function(grunt) {
                     dest: 'public/css/',
                     ext: '.css',
                 }]
+            }
+        },
+        uglify: {
+            build: {
+                files: {
+                    'public/js/script.min.js': [
+                        'public/js/jquery.jInvertScroll.js',
+                        'public/js/bootstrap.min.js', 
+                        'public/js/script.js', 
+                    ]
+                }
+            }
+        },
+        cssmin: {
+            build: {
+                files: {
+                    'public/css/style.min.css': [
+                        'public/css/jInvertScroll.css', 
+                        'public/css/bootstrap.css', 
+                        'public/css/style.css'
+                    ]
+                }
             }
         },
         connect: {
@@ -45,7 +67,7 @@ module.exports = function(grunt) {
             },
             dev:{
                 options: {
-                    script: './server.js',
+                    script: './app.js',
                     background: true,
                 }
             }
@@ -56,7 +78,7 @@ module.exports = function(grunt) {
             },
             pug: {
                 files: 'app/pug/*.pug',
-                tasks: ['pug']
+                // tasks: ['pug']
             },
             sass: {
                 files: 'app/scss/*.scss',
@@ -66,7 +88,7 @@ module.exports = function(grunt) {
                 },
             },
             express: {
-                files: ['./server.js'],
+                files: ['./app.js', './config.js'],
                 tasks: ['express:dev'],
                 options: {
                     event: ['changed'],
@@ -78,7 +100,7 @@ module.exports = function(grunt) {
         },
     });
 
-    grunt.registerTask('default', ['express:dev', 'pug', 'sass', 'watch']);
-    grunt.registerTask('build', ['pug', 'sass', 'express:dev']);
+    grunt.registerTask('default', ['express:dev', 'sass', 'watch']);
+    grunt.registerTask('build', ['uglify:build', 'cssmin:build']);
 
 }
