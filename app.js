@@ -5,7 +5,7 @@ var app = express();
 var config = require('./config/config');
 // var locals = { config: config };
 
-var port = process.env.PORT || 3000;
+var port = 9000;
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname,'/app/pug'));
